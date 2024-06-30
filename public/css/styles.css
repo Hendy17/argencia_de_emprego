@@ -1,0 +1,128 @@
+/* Reset básico para remover estilos padrão do navegador */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Estilização do cabeçalho */
+header {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  font-size: 1.5em;
+  color: #333;
+}
+
+/* Estilização da seção principal */
+#top-container {
+  background-color: #fff;
+  padding: 2rem 0;
+}
+
+#main-title {
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+#main-subtitle {
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+/* Estilização do formulário de busca */
+#search-form {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Centralizar verticalmente */
+  margin-bottom: 2rem;
+}
+
+#search-form .form-control {
+  width: 100%; /* Ajustar a largura para ocupar todo o espaço do col-md-8 */
+  margin-right: 1rem;
+}
+
+#search-form .btn {
+  width: 100%; /* Ajustar a largura para ocupar todo o espaço do col-md-2 */
+  margin-left: 0; /* Remover margem à esquerda */
+}
+
+/* Estilização das vagas em destaque */
+#jobs-container {
+  padding: 2rem;
+}
+
+#job-lis-title {
+  font-size: 1.4em;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.list-group-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  margin-bottom: 1rem;
+}
+
+.list-group-item img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.list-group-item p {
+  margin: 0;
+}
+
+.list-group-item h2 {
+  flex-grow: 1;
+}
+
+.new-job-label {
+  background-color: #5cb85c;
+  color: #fff;
+  padding: 0.2rem 0.5rem;
+  border-radius: 5px;
+}
+
+/* Estilização responsiva */
+@media (max-width: 768px) {
+  #search-form .form-control,
+  #search-form .btn {
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+
+  .list-group-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .list-group-item img {
+    margin-bottom: 1rem;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* Define uma altura mínima para a página */
+}
+

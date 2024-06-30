@@ -1,0 +1,36 @@
+<section id="top-container" class="container-fluid mt-5 pt-3">
+  <h1 id="main-title" class="text-center">Encontre o emprego dos seus sonhos</h1>
+  <p id="main-subtitle" class="text-center">Somos o site com mais vagas de tecnologia no mercado</p>
+  <form id="search-form" class="row justify-content-center" action="">
+    <div class="col-md-8">
+      <input type="text" class="form-control" id="job" name="job" placeholder="Digite a vaga que deseja">
+    </div>
+    <div class="col-md-2">
+      <button type="submit" class="btn btn-primary w-100">Procurar</button>
+    </div>
+  </form>
+</section>
+
+<main>
+  <div id="jobs-container" class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 id="job-list-title"> Veja nossas vagas em destaques</h2>
+        <ul id="job-list" class="list-group">
+          {{#each jobs}}
+              <li class="list-group-item {{#if new_job}}new-job{{/if}}">
+                <img src="/assets/company-logo.png" alt="Company">
+                <p>{{company}}</p>
+                <h2>{{title}}</h2>
+                <p>{{salary}}</p>
+                {{#if new_job}}
+                <span class="new-job-label">Nova</span>
+                {{/if}}
+                <a href="/jobs/{{id}}" class="btn btn-primary">Ver vaga</a>
+              </li>
+          {{/each}}        
+        </ul>
+      </div>
+    </div>
+  </div>
+</main>

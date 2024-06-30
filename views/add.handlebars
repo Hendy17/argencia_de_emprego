@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adicionar Job</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Adicionar Job</h1>
+    <form action="/jobs/add" method="POST">
+      <div class="form-group">
+        <label for="title">Título</label>
+        <input type="text" class="form-control" id="title" name="title" required>
+      </div>
+      <div class="form-group">
+        <label for="description">Descrição</label>
+        <textarea class="form-control" id="description" name="description" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="salary">Salário</label>
+        <input type="text" class="form-control" id="salary" name="salary" required>
+      </div>
+      <div class="form-group">
+        <label for="company">Empresa</label>
+        <input type="text" class="form-control" id="company" name="company" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="new_job">Nova Vaga</label>
+        <input type="checkbox" id="new_job" name="new_job">
+      </div>
+      <button type="submit" class="btn btn-primary">Adicionar</button>
+    </form>
+  </main>
+</body>
+</html>
