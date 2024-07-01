@@ -1,11 +1,10 @@
 const { Sequelize } = require('sequelize');
 const path = require('path');
-const { connect } = require('http2');
 
 // Caminho para o banco de dados SQLite (db/app.db)
 const sequelize = new Sequelize({
   dialect: 'sqlite',
-  storage: path.join(__dirname, 'db', 'app.db'),
+  storage: path.join(__dirname, 'app.db'), // Verifique se o caminho está correto
 });
 
 module.exports = sequelize;

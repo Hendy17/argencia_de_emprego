@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Job = require('./moduls/job.js');
+const Job = require('../modules/Job'); // Caminho atualizado
 
 // Rota para renderizar o formulário de adição de jobs
 router.get('/add', (req, res) => {

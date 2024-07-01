@@ -2,8 +2,8 @@ const express = require('express');
 const exphbs = require('express-handlebars');
 const path = require('path');
 const bodyParser = require('body-parser');
-const db = require('./db/connectio'); 
-const Job = require('./models/Job');
+const db = require('./db/connection'); 
+const Job = require('./modules/Job'); // Caminho atualizado
 const app = express();
 const PORT = 3535;
 
