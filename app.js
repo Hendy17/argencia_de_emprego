@@ -2,8 +2,11 @@ const express = require('express');
 const exphbs = require('express-handlebars');
 const path = require('path');
 const bodyParser = require('body-parser');
-const db = require('./db/connection'); 
-const Job = require('./modules/Job'); // Caminho atualizado
+const db = require('./db/connection');
+const Job = require('./models/Job');
+const Sequelize = require('sequelize');
+const Op = Sequelize.Op;
+
 const app = express();
 const PORT = 3535;
 
@@ -26,22 +29,32 @@ db.authenticate()
     return Job.sync();
   })
   .catch(err => {
-    console.error("Ocorreu um erro ao conectar:", err);
+    console.error("Ocorreu um erro ao conectar ao banco de dados:", err);
+    process.exit(1); // Encerra o processo em caso de falha na conexão com o banco de dados
   });
 
 // Routes
-app.get('/', (req, res) => {
-  Job.findAll({
-    order: [
-      ['createdAt', 'DESC']
-    ]
-  })
-  .then(jobs => {
-    res.render('index', {
-      jobs
-    });
-  })
-  .catch(err => console.error(err));
+app.get('/', async (req, res) => {
+  let search = req.query.job;
+  let query = '%' + search + '%';
+
+  try {
+    let jobs;
+    if (!search) {
+      jobs = await Job.findAll({
+        order: [['createdAt', 'DESC']]
+      });
+    } else {
+      jobs = await Job.findAll({
+        where: { title: { [Op.like]: query } },
+        order: [['createdAt', 'DESC']]
+      });
+    }
+    res.render('index', { jobs, search });
+  } catch (err) {
+    console.error("Ocorreu um erro ao buscar os jobs:", err);
+    res.status(500).send('Erro no servidor');
+  }
 });
 
 // Jobs routes

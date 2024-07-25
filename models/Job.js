@@ -1,5 +1,5 @@
 const { DataTypes } = require('sequelize');
-const db = require('../db/connection'); // Caminho correto para connection.js
+const db = require('../db/connection');
 
 const Job = db.define('Job', {
   title: {
@@ -26,6 +26,8 @@ const Job = db.define('Job', {
     type: DataTypes.BOOLEAN,
     allowNull: false
   }
+}, {
+  timestamps: true
 });
 
 module.exports = Job;

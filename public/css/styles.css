@@ -10,12 +10,16 @@ body {
   background-color: #f4f4f4;
   color: #333;
   line-height: 1.6;
+  padding-top: 100px;
 }
 
 /* Estilização do cabeçalho */
 header {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .navbar-brand {
@@ -32,11 +36,17 @@ header {
 #main-title {
   color: #333;
   margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #main-subtitle {
   color: #666;
   margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Estilização do formulário de busca */
@@ -57,12 +67,67 @@ header {
   margin-left: 0; /* Remover margem à esquerda */
 }
 
+/* job-view */
+#job-view-container {
+  margin-top: 30px;
+  position: relative;
+}
+
+#job-view-container h1 {
+  margin-bottom: 30px;
+}
+
+#img-container {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+#img-container img {
+  width: 80%;
+  max-width: 100%;
+  border-radius: 50%;
+  border: 1px solid #212529;
+}
+
+.job-desc {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.main-color {
+  color: #F03E3E;
+}
+
+.back-link {
+  border: 1px solid #F03E3E;
+  padding: 5px 10px;
+  transition: .5s;
+  display: inline-block;
+  margin: 20px 0;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: white;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  background-color: #F03E3E;
+  color: #FFF;
+  text-decoration: none;
+}
+
 /* Estilização das vagas em destaque */
 #jobs-container {
   padding: 2rem;
 }
 
-#job-lis-title {
+#job-list-title {
   font-size: 1.4em;
   color: #333;
   margin-bottom: 1rem;
@@ -76,6 +141,7 @@ header {
   background-color: #fff;
   border: 1px solid #ddd;
   margin-bottom: 1rem;
+  flex-wrap: wrap; /* Para tornar os itens flexíveis e responsivos */
 }
 
 .list-group-item img {
@@ -86,12 +152,23 @@ header {
 }
 
 .list-group-item p {
-  margin: 0;
+  margin-bottom: 0;
 }
 
 .list-group-item h2 {
   flex-grow: 1;
+  margin-bottom: 0;
+  margin-left: 1rem;
 }
+
+.list-group-item a.btn {
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 30px;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  margin-left: 1rem;
+}  
 
 .new-job-label {
   background-color: #5cb85c;
@@ -100,29 +177,136 @@ header {
   border-radius: 5px;
 }
 
+.job-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.job-detail {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.job-detail img.icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+.new-job-label {
+  font-weight: bold;
+  color: red;
+}
+
 /* Estilização responsiva */
 @media (max-width: 768px) {
+  .list-group-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .list-group-item h2 {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .list-group-item a.btn {
+    margin-left: 0;
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+  }
+
   #search-form .form-control,
   #search-form .btn {
     width: 100%;
     margin: 0.5rem 0;
   }
 
-  .list-group-item {
-    flex-direction: column;
-    align-items: flex-start;
+  .job-desc {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
   }
 
-  .list-group-item img {
-    margin-bottom: 1rem;
+  .back-link {
+    position: relative;
+    margin: 10px 0;
   }
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh; /* Define uma altura mínima para a página */
+
+
+/* job-view */
+#job-view-container {
+  margin-top: 30px;
+  position: relative; /* Necessário para o posicionamento absoluto do botão */
 }
 
+#job-view-container h1 {
+  margin-bottom: 30px;
+}
+
+#img-container {
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+#img-container img {
+  width: 20%; /* Reduz a largura da imagem para 80% */
+  max-width: 100%;
+  border-radius: 10%;
+  border: 1px solid #212529;
+}
+
+.job-desc {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.main-color {
+  color: #F03E3E;
+}
+
+.back-link {
+  border: 1px solid #F03E3E;
+  padding: 5px 10px;
+  transition: .5s;
+  display: inline-block;
+  margin: 20px 0; /* Corrigir erro de digitação */
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: white; /* Adiciona fundo branco para o botão */
+  text-decoration: none; /* Remove sublinhado do link */
+}
+
+.back-link:hover {
+  background-color: #F03E3E;
+  color: #FFF;
+  text-decoration: none;
+}
+
+/* Regras de mídia para telas menores */
+@media (max-width: 768px) {
+  #img-container img {
+    width: 100%; /* Ajusta a largura da imagem para telas menores */
+  }
+
+  .job-desc {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .back-link {
+    position: relative;
+    margin: 10px 0;
+  }
+}

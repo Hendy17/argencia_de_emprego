@@ -1,41 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Adicionar Job</title>
-  <link rel="stylesheet" href="/css/styles.css">
-</head>
-<body>
-  <main class="container">
-    <h1>Adicionar Job</h1>
-    <form action="/jobs/add" method="POST">
-      <div class="form-group">
-        <label for="title">Título</label>
-        <input type="text" class="form-control" id="title" name="title" required>
-      </div>
-      <div class="form-group">
-        <label for="description">Descrição</label>
-        <textarea class="form-control" id="description" name="description" required></textarea>
-      </div>
-      <div class="form-group">
-        <label for="salary">Salário</label>
-        <input type="text" class="form-control" id="salary" name="salary" required>
-      </div>
-      <div class="form-group">
-        <label for="company">Empresa</label>
-        <input type="text" class="form-control" id="company" name="company" required>
-      </div>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" class="form-control" id="email" name="email" required>
-      </div>
-      <div class="form-group">
-        <label for="new_job">Nova Vaga</label>
-        <input type="checkbox" id="new_job" name="new_job">
-      </div>
-      <button type="submit" class="btn btn-primary">Adicionar</button>
-    </form>
-  </main>
-</body>
-</html>
+<main class="container">
+  <h1 class="text-center">Adicionar Job</h1>
+  <form action="/jobs/add" method="POST">
+    <div class="form-group">
+      <label for="title">Título</label>
+      <input type="text" class="form-control" id="title" name="title" placeholder="Digite o titolo da vaga" required>
+      <small id="titleHelp" class="form-text text-muted">O titulo é muito importante não deixe de preencher</small>
+    </div>
+    <div class="form-group">
+      <label for="description">Descrição</label>
+      <textarea class="form-control" id="description" name="description" placeholder="Digite a Descrição da vaga, seja breve e explicativo" required></textarea>
+    </div>
+    <div class="form-group">
+      <label for="salary">Salário</label>
+      <input type="text" class="form-control" id="salary" name="salary" placeholder="Digite o valor da vaga correspondente" required>
+    </div>
+    <div class="form-group">
+      <label for="company">Empresa</label>
+      <input type="text" class="form-control" id="company" name="company" placeholder="Digite o nome da empresa contratante" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" id="email" name="email" placeholder="Digite o email de contato" required>
+    </div>
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" id="new_job" name="new_job">
+      <label class="form-check-label" for="new_job">Nova Vaga</label>
+    </div>
+    <button type="submit" class="btn btn-primary btn-block">Adicionar</button>
+  </form>
+</main>
