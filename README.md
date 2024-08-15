@@ -1,34 +1,48 @@
-# Projeto Lateral
+# SHCore Job Board
 
-Este é o repositório do projeto, uma aplicação web para gerenciamento de tarefas.
+Este projeto é uma aplicação web simples para gerenciar e visualizar vagas de emprego. Ele permite adicionar, listar, visualizar e editar informações sobre as vagas de emprego utilizando Node.js, Express, Handlebars e SQLite.
+
+## Funcionalidades
+
+- **Adicionar Vaga:** Adicione novas vagas de emprego, especificando título, descrição, salário, empresa e email de contato.
+- **Listar Vagas:** Veja uma lista das vagas de emprego disponíveis, ordenadas pela data de criação.
+- **Visualizar Vaga:** Visualize detalhes de uma vaga específica, incluindo o título, descrição, salário, empresa e informações de contato.
+- **Editar Vaga:** Edite uma vaga existente para atualizar suas informações.
 
 ## Tecnologias Utilizadas
 
-- **Frontend**:
-  - React: Biblioteca JavaScript para construção da interface do usuário.
-  - Redux: Gerenciamento de estado global.
-  - Styled Components: Estilização com componentes reutilizáveis.
-  - Axios: Cliente HTTP para fazer requisições à API.
-
-- **Backend**:
-  - Node.js: Plataforma para desenvolvimento do servidor.
-  - Express: Framework para criação de APIs RESTful.
-  - MongoDB: Banco de dados NoSQL para armazenamento de dados.
-
-## Como Executar o Projeto
-
-1. Clone este repositório.
-2. Instale as dependências do frontend e backend:
-
-3. Configure as variáveis de ambiente (por exemplo, crie um arquivo `.env`).
-4. Inicie o servidor backend:
-
-5. Inicie o frontend:
+- **Node.js:** Plataforma de desenvolvimento JavaScript do lado do servidor.
+- **Express:** Framework web para Node.js.
+- **Handlebars:** Motor de templates para gerar HTML dinâmico.
+- **SQLite:** Banco de dados leve utilizado para armazenar as informações das vagas.
+- **Bootstrap:** Framework CSS para estilização da interface.
 
 
-Acesse a aplicação em http://localhost:3535.
+## Instalação e Execução
 
-## Contribuição
+1. **Clone o repositório:**
 
-Sinta-se à vontade para contribuir com melhorias, correções de bugs ou novas funcionalidades!
+   ```bash
+   git clone https://github.com/seu-usuario/shcore-job-board.git
+   cd shcore-job-board
+   ```
+2. **Instale as dependências:**
+    ```bash
+     npm install
+    ``` 
+3. **Configure o banco de dados:**     
+  O banco de dados SQLite será configurado automaticamente na primeira execução.
+4. **Execute a aplicação:** 
+    ```bash
+      npm run dev
+     ``` 
+5. **Acesse a aplicação:** 
 
+  Abra o navegador e acesse http://localhost:3535 para visualizar a aplicação.
+
+## Uso
+* Adicionar Vaga: Clique em "Abrir Vagas" no menu de navegação e preencha o formulário para adicionar uma nova vaga.
+
+* Editar Vaga: Na página de listagem de vagas, clique em "Ver vaga" para visualizar os detalhes e, em seguida, clique em "Editar" para atualizar as informações.
+
+* Visualizar Vaga: Clique em "Ver vaga" para visualizar os detalhes completos de uma vaga específica.

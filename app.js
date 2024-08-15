@@ -50,6 +50,7 @@ app.get('/', async (req, res) => {
         order: [['createdAt', 'DESC']]
       });
     }
+   
     res.render('index', { jobs, search });
   } catch (err) {
     console.error("Ocorreu um erro ao buscar os jobs:", err);

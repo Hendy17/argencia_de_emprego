@@ -294,6 +294,7 @@ header {
 }
 
 /* Regras de mídia para telas menores */
+/* Responsividade para telas até 768px */
 @media (max-width: 768px) {
   #img-container img {
     width: 100%; /* Ajusta a largura da imagem para telas menores */
@@ -308,5 +309,201 @@ header {
   .back-link {
     position: relative;
     margin: 10px 0;
+  }
+}
+
+/* Responsividade para telas até 481px */
+@media (max-width: 481px) {
+  /* Navabar */
+  .navbar-collapse {
+    text-align: center;
+  }
+
+  /* Centraliza os links de navegação e ajusta o espaçamento */
+  .navbar-nav {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .navbar-nav .nav-link {
+    margin: 5px 0; /* Espaçamento entre os links */
+    font-size: 16px; /* Ajusta o tamanho da fonte dos links */
+  }
+
+  /* Ajuste para o botão de colapso do navbar */
+  .navbar-toggler {
+    margin-right: 0; /* Centraliza o botão de colapso */
+    border: none; /* Remove a borda padrão para um visual mais limpo */
+  }
+
+  /* Ajuste para o botão "Abrir Vagas" */
+  .navbar-nav .btn-primary {
+    width: 100%; /* Torna o botão de largura total */
+    font-size: 16px; /* Ajusta o tamanho da fonte */
+    padding: 10px; /* Ajusta o padding para facilitar o toque */
+  }
+
+
+
+  /*Home */
+  #img-container img {
+    width: 100%; /* Mantém a largura da imagem para telas muito pequenas */
+    height: auto; /* Garante que a altura da imagem se ajuste proporcionalmente */
+  }
+
+  .job-desc {
+    font-size: 14px; /* Reduz um pouco o tamanho da fonte para melhor legibilidade em telas pequenas */
+  }
+
+  .back-link {
+    font-size: 16px; /* Ajusta o tamanho da fonte do link de voltar */
+    text-align: center; /* Centraliza o link de voltar */
+    display: block;
+    margin: 20px 0; /* Adiciona mais espaçamento para toque mais fácil */
+  }
+
+  .btn-primary {
+    width: 100%; /* Torna os botões de ação de largura total */
+    padding: 12px 0; /* Aumenta o tamanho dos botões para toque fácil */
+    font-size: 16px; /* Ajusta o tamanho da fonte dos botões */
+  }
+
+  #job-list-title {
+    font-size: 18px; /* Ajusta o tamanho da fonte do título da lista de jobs */
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  /* Ajuste geral para os itens da lista */
+  .list-group-item {
+    padding: 15px;
+    font-size: 16px; /* Tamanho de fonte legível em telas pequenas */
+  }
+
+  /* Ajusta a formatação dos itens da lista */
+  .list-group-item h2 {
+    font-size: 18px; /* Ajusta o tamanho do título do job */
+    margin-bottom: 10px;
+  }
+
+  .list-group-item p {
+    margin-bottom: 10px; /* Espaçamento entre parágrafos */
+  }
+
+  .new-job-label {
+    font-size: 14px; /* Tamanho da etiqueta de "Nova" */
+    margin-top: 5px;
+  }
+    
+    /* Button de Procurar vaga */
+  .col-md-2 {
+    width: 100%; /* Faz com que o botão ocupe toda a largura da coluna */
+  }
+
+  .btn-primary.w-100 {
+    width: auto; /* Remove a largura de 100% para evitar que o botão ocupe toda a largura */
+    font-size: 16px; /* Ajusta o tamanho da fonte para um tamanho apropriado */
+    padding: 10px 20px; /* Ajusta o padding para que o botão não seja muito alto nem muito largo */
+    margin: 0 auto; /* Centraliza o botão horizontalmente */
+    display: block; /* Garante que o botão seja exibido como um bloco para fácil centralização */
+  }
+  /* Adicionar Job */
+  h1.text-center {
+    font-size: 24px; /* Reduz o tamanho do título para telas pequenas */
+    margin-bottom: 20px;
+  }
+
+  /* Ajustes no formulário */
+  .form-group {
+    margin-bottom: 15px; /* Reduz o espaçamento entre os campos do formulário */
+  }
+
+  .form-group label {
+    font-size: 14px; /* Reduz o tamanho das labels dos campos */
+  }
+
+  .form-group input,
+  .form-group textarea {
+    width: 100%; /* Garante que os campos ocupem toda a largura disponível */
+    font-size: 14px; /* Ajusta o tamanho da fonte dos inputs e textareas */
+    padding: 10px; /* Aumenta o padding para facilitar o toque */
+  }
+
+  .form-group textarea {
+    height: 100px; /* Ajusta a altura do textarea */
+  }
+
+  /* Ajuste do botão */
+  .btn-block {
+    width: 100%; /* Torna o botão de largura total */
+    font-size: 16px; /* Ajusta o tamanho da fonte do botão */
+    padding: 12px; /* Aumenta o padding para facilitar o toque */
+  }
+
+  /* Checkbox */
+  .form-check-label {
+    font-size: 14px; /* Ajusta o tamanho da label do checkbox */
+  }
+
+  .form-check-input {
+    width: auto; /* Garante que o checkbox tenha um tamanho apropriado */
+    height: auto; /* Ajusta a altura do checkbox */
+  }
+
+  /* Ajuste de margens e paddings gerais */
+  main.container {
+    padding: 0 10px; /* Reduz o padding geral para caber em telas pequenas */
+  }
+
+
+    /* Descrição da vaga */
+  /* Centraliza e ajusta o título da vaga */
+  h1.main-color.text-center {
+    font-size: 24px; /* Reduz o tamanho do título */
+    margin-bottom: 15px; /* Ajusta o espaçamento abaixo do título */
+  }
+
+  /* Ajusta o container da imagem */
+  #img-container {
+    margin-bottom: 15px; /* Ajusta o espaçamento abaixo da imagem */
+  }
+
+  #img-container img {
+    width: 100%; /* Garante que a imagem ocupe toda a largura disponível */
+    height: auto; /* Mantém a proporção da imagem */
+  }
+
+  /* Descrição do Job */
+  .job-desc {
+    font-size: 14px; /* Reduz o tamanho da fonte para melhor legibilidade */
+    text-align: justify; /* Justifica o texto para uma apresentação mais limpa */
+    margin-bottom: 20px; /* Espaçamento entre a descrição e o próximo elemento */
+  }
+
+  /* Texto geral */
+  .text-center {
+    font-size: 14px; /* Ajusta o tamanho do texto para telas pequenas */
+    margin-bottom: 15px; /* Ajusta o espaçamento geral */
+  }
+
+  /* Botões */
+  .btn-primary {
+    width: 100%; /* Torna o botão de largura total */
+    font-size: 16px; /* Aumenta o tamanho da fonte do botão */
+    padding: 12px; /* Aumenta o padding para facilitar o toque */
+    margin-bottom: 10px; /* Espaçamento abaixo do botão */
+  }
+
+  /* Link para voltar */
+  .back-link {
+    font-size: 16px; /* Ajusta o tamanho da fonte do link */
+    display: block;
+    margin: 20px 0; /* Espaçamento para toque fácil */
+    text-align: center; /* Centraliza o link */
+  }
+
+  /* Ajustes no layout */
+  #job-view-container {
+    padding: 0 10px; /* Reduz o padding geral para caber em telas pequenas */
   }
 }

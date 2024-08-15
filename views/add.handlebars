@@ -1,31 +1,33 @@
 <main class="container">
-  <h1 class="text-center">Adicionar Job</h1>
+  <h1 class="text-center">{{#if job}}Editar Job{{else}}Adicionar Job{{/if}}</h1>
   <form action="/jobs/add" method="POST">
+    {{#if job}}
+      <input type="hidden" name="id" value="{{job.id}}">
+    {{/if}}
     <div class="form-group">
       <label for="title">Título</label>
-      <input type="text" class="form-control" id="title" name="title" placeholder="Digite o titolo da vaga" required>
-      <small id="titleHelp" class="form-text text-muted">O titulo é muito importante não deixe de preencher</small>
+      <input type="text" class="form-control" id="title" name="title" placeholder="Digite o título da vaga" value="{{job.title}}" required>
     </div>
     <div class="form-group">
       <label for="description">Descrição</label>
-      <textarea class="form-control" id="description" name="description" placeholder="Digite a Descrição da vaga, seja breve e explicativo" required></textarea>
+      <textarea class="form-control" id="description" name="description" placeholder="Digite a descrição da vaga, seja breve e explicativo" required>{{job.description}}</textarea>
     </div>
     <div class="form-group">
       <label for="salary">Salário</label>
-      <input type="text" class="form-control" id="salary" name="salary" placeholder="Digite o valor da vaga correspondente" required>
+      <input type="text" class="form-control" id="salary" name="salary" placeholder="Digite o valor da vaga correspondente" value="{{job.salary}}" required>
     </div>
     <div class="form-group">
       <label for="company">Empresa</label>
-      <input type="text" class="form-control" id="company" name="company" placeholder="Digite o nome da empresa contratante" required>
+      <input type="text" class="form-control" id="company" name="company" placeholder="Digite o nome da empresa contratante" value="{{job.company}}" required>
     </div>
     <div class="form-group">
       <label for="email">Email</label>
-      <input type="email" class="form-control" id="email" name="email" placeholder="Digite o email de contato" required>
+      <input type="email" class="form-control" id="email" name="email" placeholder="Digite o email de contato" value="{{job.email}}" required>
     </div>
     <div class="form-group form-check">
-      <input type="checkbox" class="form-check-input" id="new_job" name="new_job">
+      <input type="checkbox" class="form-check-input" id="new_job" name="new_job" {{#if job.new_job}}checked{{/if}}>
       <label class="form-check-label" for="new_job">Nova Vaga</label>
     </div>
-    <button type="submit" class="btn btn-primary btn-block">Adicionar</button>
+    <button type="submit" class="btn btn-primary btn-block">{{#if job}}Atualizar{{else}}Adicionar{{/if}}</button>
   </form>
 </main>
