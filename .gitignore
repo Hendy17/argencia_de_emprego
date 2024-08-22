@@ -6,3 +6,5 @@ package.json
 
 # Node_modules
 node_modules
+# Local Netlify folder
+.netlify
