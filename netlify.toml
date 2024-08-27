@@ -1,9 +1,10 @@
-[build]
-command = "npm run build"
-publish = "public"
-
 [functions]
 directory = "netlify/functions"
+
+[dev]
+command = "npm start"  # Este comando deve funcionar com base na estrutura correta do projeto
+targetPort = 8888
+framework = "#custom"
 
 [[redirects]]
 from = "/"
