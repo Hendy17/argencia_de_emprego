@@ -4,3 +4,8 @@ publish = "public"
 
 [functions]
 directory = "netlify/functions"
+
+[[redirects]]
+from = "/"
+to = "/.netlify/functions/app"
+status = 200
